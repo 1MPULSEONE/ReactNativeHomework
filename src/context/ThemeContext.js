@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+
 const ThemeContext = React.createContext({
   theme: "LIGHT", setDark: () => {
   }, setLight: () => {
@@ -6,24 +7,18 @@ const ThemeContext = React.createContext({
 });
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState("LIGHT");
-  const setDark = () => {
-    setTheme("DARK");
-  };
-  const setLight = () => {
-    setTheme("LIGHT");
-  };
+  const setDark = () => setTheme("DARK");
+  const setLight = () => setTheme("LIGHT");
   return <ThemeContext.Provider value={{ theme, setDark, setLight }}>{children}</ThemeContext.Provider>;
 };
 
 export const useTheme = () => {
-  const { theme, setLight, setDark } = React.useContext(ThemeContext);
+  const { theme, setDark, setLight } = React.useContext(ThemeContext);
   return {
     theme,
-    setLight,
-    setDark,
-    isLight: theme === "LIGHT",
     isDark: theme === "DARK",
-    THEME_COLOR: theme === "LIGHT" ? LIGHT_THEME : DARK_THEME,
+    setDark,
+    setLight
   };
 };
 
