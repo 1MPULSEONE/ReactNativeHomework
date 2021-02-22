@@ -90,19 +90,19 @@ const MainScreen = () => {
         onValueChange={(value) => toggleSwitch(value)}
         value={isDark}
       />
-      <Text>Name</Text>
+      <Text style={isDark ? { color: "white" } : { color: "black" }}>Name</Text>
       <TextInput onChangeText={(name) => setName(name)} />
-      <Text>Surname</Text>
+      <Text style={isDark ? { color: "white" } : { color: "black" }}>Surname</Text>
       <TextInput onChangeText={(surname) => setSurname(surname)} />
-      <Text>Middle name</Text>
+      <Text style={isDark ? { color: "white" } : { color: "black" }}> Middle name</Text>
       <TextInput onChangeText={(middleName) => setMiddleName(middleName)} />
-      <Text>Date of birth</Text>
+      <Text style={isDark ? { color: "white" } : { color: "black" }}>Date of birth</Text>
       <TextInput keyboardType="numeric" onChangeText={(dateOfBirth) => setDateOfBirth(dateOfBirth)} />
-      <Text>Street</Text>
+      <Text style={isDark ? { color: "white" } : { color: "black" }}>Street</Text>
       <TextInput onChangeText={(street) => setStreet(street)} />
-      <Text>Home</Text>
+      <Text style={isDark ? { color: "white" } : { color: "black" }}>Home</Text>
       <TextInput onChangeText={(home) => setHome(home)} />
-      <Text>Apartment</Text>
+      <Text style={isDark ? { color: "white" } : { color: "black" }}>Apartment</Text>
       <TextInput onChangeText={(apartment) => setApartment(apartment)} />
     </View>
   );
